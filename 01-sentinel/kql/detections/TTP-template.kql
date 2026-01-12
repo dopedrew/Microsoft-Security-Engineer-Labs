@@ -1,0 +1,28 @@
+// ============================================================================
+// Title: <Technique> - <Scenario>
+// ID: TTP-<technique>-<scenario>
+// Author: Andrew Hogan
+// Date: <YYYY-MM-DD>
+// Data Sources: <e.g., SigninLogs, SecurityAlert, DeviceNetworkEvents>
+// MITRE ATT&CK: <Txxxx> <Technique Name>
+// Severity: <Informational/Low/Medium/High>
+// Description:
+//   <What this query is detecting and why it matters>
+// Known False Positives:
+//   - <Describe expected benign matches>
+// Tuning Notes:
+//   - <Thresholds, exclusions, environment assumptions>
+// Validation Steps:
+//   - <How you tested this detection in the lab>
+// ============================================================================
+
+/*
+Example skeleton:
+
+SigninLogs
+| where TimeGenerated > ago(24h)
+| where ResultType == "0"
+| summarize Count=count() by UserPrincipalName, IPAddress, bin(TimeGenerated, 1h)
+| where Count > 20
+*/
+
